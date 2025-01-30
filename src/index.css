@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+:root {
+  --primary-color: #1E40AF;
+  --secondary-color: #374151;
+  --accent-color: #6B7280;
+  --metal-light: #D1D5DB;
+  --metal-mid: #9CA3AF;
+  --metal-dark: #374151;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: white;
+  color: #1E293B;
+}
+
+/* Advanced Metallic Text Animation */
+@keyframes molten-glow {
+  0% { 
+    opacity: 0.8;
+    transform: scaleX(0.8);
+  }
+  50% { 
+    opacity: 1;
+    transform: scaleX(1);
+  }
+  100% { 
+    opacity: 0.8;
+    transform: scaleX(0.8);
+  }
+}
+
+@keyframes metal-text-shine {
+  0%, 100% {
+    background-position: -100% 0;
+  }
+  50% {
+    background-position: 200% 0;
+  }
+}
+
+.metal-text {
+  position: relative;
+  display: inline-block;
+  
+  /* Metallic Gradient */
+  background: linear-gradient(
+    145deg,
+    #E5E7EB 0%,
+    #D1D5DB 25%,
+    #9CA3AF 50%,
+    #6B7280 75%,
+    #4B5563 100%
+  );
+  background-size: 400% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  
+  /* Typography */
+  font-family: 'Bebas Neue', 'Inter', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  
+  /* Animations */
+  animation: 
+    metal-text-shine 4s ease-in-out infinite,
+    metal-text-flicker 3s ease-in-out infinite alternate;
+  
+  /* Subtle Metallic Effect */
+  text-shadow: 
+    0 0 6px rgba(0, 0, 0, 0.2),
+    0 0 10px rgba(0, 0, 0, 0.1);
+  
+  /* Metallic Texture */
+  background-image: 
+    linear-gradient(145deg, rgba(0,0,0,0.05) 25%, transparent 25%),
+    linear-gradient(145deg, #E5E7EB 0%, #4B5563 100%);
+  background-size: 4px 4px;
+}
+
+.metal-text::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    #6B7280 30%,
+    #4B5563 70%,
+    transparent 100%
+  );
+  animation: molten-glow 2s infinite;
+}
+
+@keyframes metal-text-flicker {
+  0%, 100% {
+    filter: brightness(1) contrast(1);
+  }
+  50% {
+    filter: brightness(1.1) contrast(1.05);
+  }
+}
+
+/* Navbar text styles */
+.navbar-text {
+  color: #1E293B;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar-text:hover {
+  color: #334155;
+}
+
+/* Global Improvements */
+.section-container {
+  @apply container mx-auto px-6 py-16;
+}
+
+.card {
+  @apply bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300;
+}
+
+.btn-primary {
+  @apply bg-mmpl-blue text-white px-6 py-3 rounded-full font-bold hover:bg-blue-800 transition-colors;
+}
+
+.btn-secondary {
+  @apply border-2 border-mmpl-blue text-mmpl-blue px-6 py-3 rounded-full font-bold hover:bg-mmpl-blue hover:text-white transition-colors;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0056b3;
+}
+
+/* Subtle Background Texture */
+.bg-texture {
+  background-image: 
+    linear-gradient(45deg, rgba(0,0,0,0.05) 25%, transparent 25%), 
+    linear-gradient(-45deg, rgba(0,0,0,0.05) 25%, transparent 25%);
+  background-size: 40px 40px;
+}
+
+/* Responsive Typography */
+h1 {
+  @apply text-4xl md:text-5xl font-bold;
+}
+
+h2 {
+  @apply text-3xl md:text-4xl font-bold;
+}
+
+p {
+  @apply text-base md:text-lg leading-relaxed;
+}
+
+/* Hover Effects */
+.hover-lift {
+  transition: transform 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-10px);
+}
