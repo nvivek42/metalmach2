@@ -18,9 +18,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -41,15 +39,13 @@
     ]
   },
   "devDependencies": {
-    "@babel/preset-react": "^7.22.15",
-    "@types/react": "^18.2.43",
-    "@types/react-dom": "^18.2.17",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.14",
     "gh-pages": "^6.3.0",
     "postcss": "^8.4.24",
     "tailwindcss": "^3.3.2",
     "vite": "^6.0.11"
-  },
-  "homepage": "https://nvivek42.github.io/metalmach2/"
+  }
 }
