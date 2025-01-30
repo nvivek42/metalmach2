@@ -3,14 +3,7 @@ import react from '@vitejs/plugin-react'
 import path from 'path'
 
 export default defineConfig({
-  plugins: [
-    react({
-      babel: {
-        presets: ['@babel/preset-react'],
-        plugins: [],
-      },
-    })
-  ],
+  plugins: [react()],
   base: '/metalmach2/',
   resolve: {
     alias: {
@@ -35,6 +28,9 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'index.html')
+      },
       output: {
         manualChunks(id) {
           if (id.includes('node_modules')) {
@@ -43,9 +39,12 @@ export default defineConfig({
         },
         entryFileNames: 'assets/[name].js',
         chunkFileNames: 'assets/[name]-[hash].js',
-        assetFileNames: 'assets/[name].[ext]'
+        assetFileNames: 'assets/[name][extname]'
       }
     }
+  },
+  css: {
+    devSourcemap: true
   },
   server: {
     port: 3000,
