@@ -29,8 +29,9 @@ const Header = () => {
             className="metal-text" 
             data-text="MetalMach Mastery"
             style={{
-              fontSize: '2rem',
-              fontWeight: 900
+              fontFamily: 'Inter, sans-serif',
+              fontSize: '1.5rem',
+              fontWeight: 800
             }}
           >
             MetalMach Mastery
@@ -41,10 +42,9 @@ const Header = () => {
             <Link 
               key={to} 
               to={to} 
-              className="navbar-text hover:text-opacity-80 transition-colors relative group"
+              className="navbar-text hover:text-slate-800 transition-colors"
             >
               {label}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-700 transition-all duration-300 group-hover:w-full"></span>
             </Link>
           ))}
         </div>
@@ -55,7 +55,7 @@ const Header = () => {
 
 // Footer Component
 const Footer = () => (
-  <footer className="bg-mmpl-gray text-white py-12">
+  <footer className="bg-white text-slate-700 py-12 border-t">
     <div className="container mx-auto px-6">
       <div className="grid md:grid-cols-3 gap-8">
         <div>
@@ -65,9 +65,9 @@ const Footer = () => (
         <div>
           <h4 className="font-bold mb-4">Quick Links</h4>
           <div className="space-y-2">
-            <Link to="/about" className="block hover:text-blue-400">About Us</Link>
-            <Link to="/services" className="block hover:text-blue-400">Services</Link>
-            <Link to="/quality" className="block hover:text-blue-400">Quality</Link>
+            <Link to="/about" className="block hover:text-slate-900">About Us</Link>
+            <Link to="/services" className="block hover:text-slate-900">Services</Link>
+            <Link to="/quality" className="block hover:text-slate-900">Quality</Link>
           </div>
         </div>
         <div>
@@ -77,7 +77,7 @@ const Footer = () => (
           <p>Email: info@metalmachmastery.com</p>
         </div>
       </div>
-      <div className="text-center mt-8 border-t border-gray-700 pt-6">
+      <div className="text-center mt-8 border-t border-gray-200 pt-6">
         <p>&copy; 2025 MetalMach Mastery Pvt. Ltd. All Rights Reserved.</p>
       </div>
     </div>
